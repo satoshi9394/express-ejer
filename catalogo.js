@@ -45,7 +45,7 @@ APP.get('/catalogo/:id', (req, resp) => {
     resp.send(catalogo[id]);
 })
 
-APP.post('/comprar', (req, resp) => {
+APP.post('/comprar/id', (req, resp) => {
     console.log(req.body.id)
     const id = req.body.id
     console.log(req.body);
@@ -53,7 +53,13 @@ APP.post('/comprar', (req, resp) => {
     console.log(pay[0].name)
     resp.send('usted compro:'+''+ pay[0].name);
 })
-
+APP.post('/comprar', (req, resp) => {
+    console.log(req.body.name)
+    const name = req.body.name
+    const newCatalogo = catalogo.filter( catalogo => catalogo.name != name )
+    console.log(newCatalogo)
+    resp.send('usted compro:'+ name);
+})
 
 
 
