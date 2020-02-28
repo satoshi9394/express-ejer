@@ -59,7 +59,7 @@ APP.post('/comprar', (req, resp) => {
     const newCatalogo = catalogo.filter( catalogo => catalogo.name != name )
     console.log(newCatalogo)
     resp.send('usted compro:'+ name);
-})
+}) 
 
 
 

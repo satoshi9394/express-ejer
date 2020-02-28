@@ -14,6 +14,7 @@ const SERVER = http.createServer(APP);
 
 APP.post('/', (req, resp) => {
     console.log(req.body);
+    
     resp.send('hola');
 })
 
