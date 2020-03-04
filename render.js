@@ -2,8 +2,9 @@ import http from 'http';
 import path from 'path'
 import express from 'express';
 import getImages from './utils/getImages'
+import countDowload from './utils/countDownload'
 
-let images = getImages();
+let imagesData = getImages();
 
 
 const APP = express();
@@ -22,20 +23,11 @@ APP.get('/', (req, res) =>{
 });
 
 APP.get('/images', (req, res)=>{
-  res.render('images', { images, title: 'Image Gallary' });
-
+  res.render('images', { imagesData, title: 'Image Gallary' });
 });
 
 APP.get('/download/:images', (req, res)=>{
-  let imgToDownload = req.params.images
-  images=images.map(images => {
-    if(images.name===imgToDownload){
-      images.views = images.views + 1
-      return images
-    }else{
-      return images
-    }
-  })
+  imagesData= countDowload(req.params.images, imagesData)
   const file = path.join(__dirname + '/public/images/' + req.params.images + '.jpg')
   res.download(file)
 })
