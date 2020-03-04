@@ -1,0 +1,9 @@
+div
+  each image in images 
+    .container
+      .content
+        img(src='/images/' + image.name + '.jpg', )
+        .content-data
+          p=image.name
+          P Download: #{image.views} 
+          a(href="/download/" + image.name) para descargar haz click aqui
