@@ -1,7 +1,6 @@
 export default (params, images) =>{
-  let imgToDownload = params
   images=images.map(images => {
-    if(images.name===imgToDownload){
+    if(images.name===params){
       images.views = images.views + 1
       return images
     }else{

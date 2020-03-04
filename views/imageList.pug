@@ -6,4 +6,5 @@ div
         .content-data
           p=image.name
           P Download: #{image.views} 
-          a(href="/download/" + image.name) para descargar haz click aqui
+          a(href="/download/" + image.name)
+            img#iconImgDownload(src="/icons/imgDownload.svg" rel="icon"  alt="Icono de descarga")

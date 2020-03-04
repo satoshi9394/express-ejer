@@ -1,3 +1,8 @@
+:root{
+  --cyan-darken-4: #006064;
+  --cyan-lighten-2: #4dd0e1;
+}
+
 body{
   background-color: cyan;
 }
@@ -11,6 +16,7 @@ h1{
   display: inline-flex;
   font-size: 20px;
   margin: 10px;
+  background-color: var(--cyan-darken-4);
 }
 
 .content{
@@ -27,4 +33,13 @@ img{
 a{
   font-size: 20px;
   text-decoration: none;
+}
+
+#iconImgDownload{
+  width: 30px;
+  height: 30px;
+}
+
+.content-data{
+  color: var(--cyan-lighten-2);
 }
